@@ -59,7 +59,7 @@ const numToChar = (num: number) => {
 };
 
 const createSheetData = () => {
-    const sheetData: ICellData[][] = new Array(100000).fill(0).map((_, index) => {
+    const sheetData: ICellData[][] = new Array(10000).fill(0).map((_, index) => {
         return new Array(26).fill(0).map((_, c) => {
             if (c < 2) {
                 return {
@@ -240,7 +240,7 @@ onMounted(async () => {
     console.time('evaluate');
 
 
-    if (data.data.length < 10000000) {
+    if (data.data.length < 1000) {
         runFormula(0, data.data.length);
     } else {
         runFormula(0, FIRST_BATCH_SIZE);
